@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Career Classes | Best Coaching in Devghatta</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* --- CSS VARIABLES --- */
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #f59e0b;
+            --dark-color: #1e293b;
+            --light-bg: #f8fafc;
+            --white: #ffffff;
+            --text-gray: #64748b;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { line-height: 1.6; color: var(--dark-color); background-color: var(--light-bg); }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; height: auto; }
+
+        /* --- UTILITY CLASSES --- */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .section-title { text-align: center; font-size: 2.5rem; font-weight: 700; margin-bottom: 10px; color: var(--primary-color); }
+        .section-subtitle { text-align: center; color: var(--text-gray); margin-bottom: 50px; }
+        
+        .btn { display: inline-block; padding: 12px 30px; border-radius: 50px; font-weight: 600; transition: all 0.3s ease; cursor: pointer; border: none; }
+        .btn-primary { background-color: var(--primary-color); color: var(--white); }
+        .btn-primary:hover { background-color: #1d4ed8; transform: translateY(-2px); }
+        .btn-secondary { background-color: var(--secondary-color); color: var(--white); }
+        .btn-secondary:hover { background-color: #d97706; transform: translateY(-2px); }
+
+        /* --- HEADER --- */
+        header { background: var(--white); box-shadow: var(--shadow); position: sticky; top: 0; z-index: 1000; }
+        nav { display: flex; justify-content: space-between; align-items: center; height: 80px; }
+        .logo { font-size: 1.8rem; font-weight: 800; color: var(--primary-color); }
+        .logo span { color: var(--secondary-color); }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { font-weight: 500; font-size: 1rem; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--primary-color); }
+        .mobile-menu-btn { display: none; font-size: 1.5rem; cursor: pointer; }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background: linear-gradient(rgba(30, 41, 59, 0.8), rgba(30, 41, 59, 0.8)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover; background-position: center;
+            height: 90vh; display: flex; align-items: center; text-align: center; color: var(--white);
+        }
+        .hero-content h1 { font-size: 3.5rem; margin-bottom: 20px; line-height: 1.2; }
+        .hero-content p { font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .hero-buttons { display: flex; gap: 20px; justify-content: center; }
+
+        /* --- COURSES --- */
+        .courses { padding: 80px 0; }
+        .course-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .course-card { background: var(--white); border-radius: 10px; overflow: hidden; box-shadow: var(--shadow); transition: transform 0.3s; text-align: center; padding: 30px; border-bottom: 4px solid var(--primary-color); }
+        .course-card:hover { transform: translateY(-10px); }
+        .course-icon { font-size: 3rem; color: var(--primary-color); margin-bottom: 20px; }
+        .course-card h3 { margin-bottom: 10px; font-size: 1.5rem; }
+        .course-card p { color: var(--text-gray); margin-bottom: 20px; }
+
+        /* --- WHY CHOOSE US --- */
+        .features { background-color: var(--white); padding: 80px 0; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; text-align: center; }
+        .feature-item i { background: #eff6ff; color: var(--primary-color); width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 20px; }
+        .feature-item h4 { font-size: 1.2rem; margin-bottom: 10px; }
+        .feature-item p { color: var(--text-gray); font-size: 0.9rem; }
+
+        /* --- RESULTS --- */
+        .results { background: linear-gradient(135deg, var(--primary-color), #1e40af); padding: 80px 0; color: var(--white); text-align: center; }
+        .results-grid { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 30px; }
+        .result-stat h2 { font-size: 3.5rem; font-weight: 800; margin-bottom: 5px; }
+        .result-stat p { font-size: 1.1rem; opacity: 0.9; }
+
+        /* --- ADMISSION FORM --- */
+        .admission { padding: 80px 0; }
+        .form-container { background: var(--white); max-width: 600px; margin: 0 auto; padding: 40px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--dark-color); }
+        .form-group input, .form-group select { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 1rem; }
+
+        /* --- FOOTER --- */
+        footer { background: var(--dark-color); color: var(--white); padding: 50px 0 20px; text-align: center; }
+        .footer-content p { color: #94a3b8; margin-bottom: 20px; }
+
+        /* --- FLOATING BUTTONS --- */
+        .float-buttons { position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 15px; z-index: 999; }
+        .float-btn { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: white; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: transform 0.3s; }
+        .float-btn:hover { transform: scale(1.1); }
+        .whatsapp { background-color: #25D366; }
+        .call { background-color: var(--primary-color); }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .hero-content h1 { font-size: 2.5rem; }
+            .hero-buttons { flex-direction: column; }
+            .btn { width: 100%; text-align: center; }
+            .results-grid { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">Star Career<span>Classes</span></a>
+                <ul class="nav-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#features">Why Us</a></li>
+                    <li><a href="#results">Results</a></li>
+                    <li><a href="#admission" class="btn btn-primary" style="padding: 8px 20px; color: white;">Admission</a></li>
+                </ul>
+                <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero">
+        <div class="container hero-content">
+            <h1>Star Career Classes<br>Best JEE & NEET Coaching in Devghatta</h1>
+            <p>Expert guidance for Class 10, JEE Mains & NEET UG. Join India's fastest growing coaching institute near Allahabad.</p>
+            <div class="hero-buttons">
+                <a href="#admission" class="btn btn-primary">Enroll Now</a>
+                <a href="#courses" class="btn btn-secondary">View Courses</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- COURSES SECTION -->
+    <section id="courses" class="courses">
+        <div class="container">
+            <h2 class="section-title">Our Courses</h2>
+            <p class="section-subtitle">Choose your path to success</p>
+            
+            <div class="course-grid">
+                <!-- Course 1 -->
+                <div class="course-card">
+                    <div class="course-icon"><i class="fas fa-school"></i></div>
+                    <h3>Class 10th</h3>
+                    <p>Complete CBSE & State Board preparation for 10th board exams. Focus on Science & Maths.</p>
+                    <a href="#" style="color:var(--primary-color); font-weight:600;">Know More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Course 2 -->
+                <div class="course-card">
+                    <div class="course-icon"><i class="fas fa-flask"></i></div>
+                    <h3>JEE Mains & Advanced</h3>
+                    <p>Best engineering entrance coaching. Expert faculty, mock tests, and study material.</p>
+                    <a href="#" style="color:var(--primary-color); font-weight:600;">Know More <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="course-card">
+                    <div class="course-icon"><i class="fas fa-user-md"></i></div>
+                    <h3>NEET UG</h3>
+                    <p>Medical entrance exam preparation with comprehensive biology, physics & chemistry.</p>
+                    <a href="#" style="color:var(--primary-color); font-weight:600;">Know More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose Us?</h2>
+            <p class="section-subtitle">We are the best choice for your child's future</p>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h4>Expert Faculty</h4>
+                    <p>Learn from experienced teachers from top institutions.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-book-open"></i>
+                    <h4>Smart Study Material</h4>
+                    <p>Comprehensive notes and books designed for quick learning.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-clock"></i>
+                    <h4>Flexible Timing</h4>
+                    <p>Batch options for school students & repeaters.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-rupee-sign"></i>
+                    <h4>Affordable Fees</h4>
+                    <p>Quality education at the lowest fees in Devghatta.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section id="results" class="results">
+        <div class="container">
+            <h2 class="section-title" style="color:white;">Our Results</h2>
+            <p class="section-subtitle" style="color:rgba(255,255,255,0.8);">Students achieving their dreams</p>
+            
+            <div class="results-grid">
+                <div class="result-stat">
+                    <h2>500+</h2>
+                    <p>Students Selected</p>
+                </div>
+                <div class="result-stat">
+                    <h2>50+</h2>
+                    <p>IIT Selections</p>
+                </div>
+                <div class="result-stat">
+                    <h2>100%</h2>
+                    <p>Result Ratio</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADMISSION FORM -->
+    <section id="admission" class="admission">
+        <div class="container">
+            <h2 class="section-title">Take Admission</h2>
+            <p class="section-subtitle">Fill the form below and start your journey</p>
+            
+            <div class="form-container">
+                <form action="https://wa.me/7546935750?text=I+want+to+take+admission+in+Star+Career+Classes" method="get">
+                    <div class="form-group">
+                        <label>Student Name</label>
+                        <input type="text" placeholder="Enter student name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Parent's Mobile Number</label>
+                        <input type="tel" placeholder="Enter mobile number" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Select Course</label>
+                        <select required>
+                            <option value="">Select Course</option>
+                            <option value="Class 10">Class 10th</option>
+                            <option value="JEE">JEE Mains & Advanced</option>
+                            <option value="NEET">NEET UG</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>City / Area</label>
+                        <input type="text" placeholder="Devghatta, Allahabad" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width:100%;">Submit & Chat on WhatsApp</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-content">
+            <h3>Star Career Classes</h3>
+            <p>Devghatta, Near Allauli | Phone: 7546935750</p>
+            <p>&copy; 2024 Star Career Classes. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- FLOATING BUTTONS -->
+    <div class="float-buttons">
+        <a href="https://wa.me/7546935750" class="float-btn whatsapp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="tel:7546935750" class="float-btn call">
+            <i class="fas fa-phone"></i>
+        </a>
+    </div>
+
+</body>
+</html>
